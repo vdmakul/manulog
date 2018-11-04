@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  angular-course:
+    container_name: manulog
+    build: docker
+    ports:
+      - 4200:4200
+    volumes:
+      - ./:/var/www/manulog
+    tty: true
+    networks:
+      - manulog-network
+
+networks:
+ manulog-network:
+  # external: true
