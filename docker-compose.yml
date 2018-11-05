@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  angular-course:
+  manulog-service:
     container_name: manulog
     build: docker
     ports:
