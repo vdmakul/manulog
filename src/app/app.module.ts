@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './common/monule/material/material.module';
+import { MaterialModule } from './common/module/material/material.module';
+import { EditorComponent } from './features/editor/editor.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
