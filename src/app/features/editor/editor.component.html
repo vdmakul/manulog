@@ -1,0 +1,24 @@
+<div class="editor-wrapper">
+  <div class="editor-title">
+    <div class="editor-title-spacer">Article</div>
+
+    <button mat-icon-button color="primary" (click)="toggleMarkdownView()">
+      <mat-icon>code</mat-icon>
+    </button>
+
+  </div>
+
+  <div class="editor-body">
+    <div *ngIf="showMarkdown">
+      <markdown [data]="article"></markdown>
+    </div>
+  
+    <div class="plain-text-edit" *ngIf="!showMarkdown">
+      <mat-form-field >
+        <textarea matInput [(ngModel)]="article"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+</div>

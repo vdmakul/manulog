@@ -1,0 +1,36 @@
+.editor-wrapper {
+    border: 1px solid rgba(0,0,0,.03);
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    margin: 4px;
+}
+
+.editor-title {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 8px 20px;
+    background: rgba(0,0,0,.03);
+}
+  
+.editor-title-spacer {
+    flex: 1 1 auto;
+}
+
+.editor-body {
+    padding: 20px;
+}
+
+/* https://stackoverflow.com/questions/48376554/angular-5-material-form-fields-stuck-at-180px */
+.mat-form-field-infix {
+    width: 100%;
+}
+
+.plain-text-edit {
+    display: flex;
+    flex-direction: column;
+}
+
+.plain-text-edit > * {
+    width: 100%;
+}
