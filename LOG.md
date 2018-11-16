@@ -34,3 +34,7 @@ Goog library for markdown preview, simple and lightweght: https://jfcere.github.
 
 The quickest way to make textarea to resize was inlude another dependency
 `npm install ngx-autosize` 
+
+### Creating inline editable article title
+
+Didn't manage to easily create inline title edit.

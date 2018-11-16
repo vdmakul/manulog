@@ -1,6 +1,13 @@
 <div class="editor-wrapper">
   <div class="editor-title">
-    <div class="editor-title-spacer">Article</div>
+
+    <div class="editor-title-spacer">
+      <mat-form-field *ngIf="!showMarkdown" class="input-with-preview">
+        <input matInput [(ngModel)]="title">
+      </mat-form-field>
+      <span *ngIf="showMarkdown">{{title}}</span>
+
+    </div>
 
     <button mat-icon-button color="primary" (click)="toggleMarkdownView()">
       <mat-icon>code</mat-icon>
@@ -15,7 +22,7 @@
   
     <div class="plain-text-edit" *ngIf="!showMarkdown">
       <mat-form-field >
-        <textarea autosize matInput [(ngModel)]="article"></textarea>
+        <textarea class="input-with-preview" autosize matInput [(ngModel)]="article"></textarea>
       </mat-form-field>
     </div>
   </div>
