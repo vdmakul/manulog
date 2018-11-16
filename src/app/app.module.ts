@@ -8,6 +8,7 @@ import { MaterialModule } from './common/module/material/material.module';
 import { EditorComponent } from './features/editor/editor.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { FormsModule } from '@angular/forms';
+import {AutosizeModule} from 'ngx-autosize';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    MarkdownModule.forRoot()
-    
+    MarkdownModule.forRoot(),
+    AutosizeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

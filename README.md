@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
+## Planned features
+* Basic UI
+- [ ] Edit and preview markdown text
+* Storage and auth
+- [ ] Store markdown in user gists on github
+- [ ] Auth with github keys that are encrypted with user password, stored at localStorage and decrypted only in runtime
+* Basic feature: log of manual
+- [ ] UI for creating logs
+- [ ] Store logs in single .md file
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

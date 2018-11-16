@@ -31,6 +31,10 @@
     flex-direction: column;
 }
 
+.plain-text-edit textarea {
+    resize: none;
+}
+
 .plain-text-edit > * {
     width: 100%;
 }
