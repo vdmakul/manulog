@@ -38,3 +38,8 @@ The quickest way to make textarea to resize was inlude another dependency
 ### Creating inline editable article title
 
 Didn't manage to easily create inline title edit.
+
+
+## Making the auth
+
+Github REST API v3 gives an opportunity to use basic auth with pre-generated personal api tokens. These tokens are used for auth.
