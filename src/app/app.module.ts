@@ -12,6 +12,7 @@ import {AutosizeModule} from 'ngx-autosize';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { LoginComponent } from './features/login/login.component';
+import { LandingComponent } from './features/landing/landing.component';
 import { LoggerService } from './service/logger.service';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { LoggerService } from './service/logger.service';
     AppComponent,
     EditorComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

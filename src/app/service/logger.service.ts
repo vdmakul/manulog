@@ -7,8 +7,6 @@ import { environment } from 'src/environments/environment';
 })
 export class LoggerService {
 
-  private _is
-
   constructor() { }
 
   get info() {

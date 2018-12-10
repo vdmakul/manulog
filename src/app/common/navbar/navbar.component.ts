@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/service/login.service';
+import { GithubUser } from 'src/app/service/git-repository.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  user: GithubUser;
+
+  constructor(private _loginService: LoginService) { }
 
   ngOnInit() {
+    this._loginService.user$.subscribe(user => {
+      this.user = user;
+    });
   }
 
+  public logout() {
+    this._loginService.logout();
+  }
 }
