@@ -18,10 +18,11 @@ export class GitRepositoryService {
     return this._browserStorageService.get('USER_TOKEN');
   }
 
-  public login(username: string, token: string): Observable<GithubUser> {
+  public login(token: string): Observable<GithubUser> {
     const headers: HttpHeaders = new HttpHeaders()
-        .append('Authorization', 'Basic ' + btoa(username + ':' + token))
+        .append('Authorization', 'token ' + token)
         .append('Content-Type', 'application/x-www-form-urlencoded');
+    console.log('Logging with heasder ' + JSON.stringify(headers));
     return this._http.get<GithubUser>(GITHUB_API_URL + '/user', {headers: headers})
   }
 }

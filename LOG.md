@@ -43,3 +43,5 @@ Didn't manage to easily create inline title edit.
 ## Making the auth
 
 Github REST API v3 gives an opportunity to use basic auth with pre-generated personal api tokens. These tokens are used for auth.
+Personal auth tokens can be generated on page https://github.com/settings/tokens 
+Manual how to access user info https://developer.github.com/v3/#oauth2-token-sent-in-a-header

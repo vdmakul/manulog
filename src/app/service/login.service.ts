@@ -27,10 +27,14 @@ export class LoginService {
   }
 
   public login(username: string, token: string) {
-    this._gitRepositoryService.login(username, token).subscribe((user: GithubUser) => {
-      this._browserStorageService.set(MANULOG_USERNAME, username);
-      this._browserStorageService.set(MANULOG_USER_TOKEN, token);
-      this._user$$.next(user);
+    this._gitRepositoryService.login(token).subscribe((user: GithubUser) => {
+      if (user.login === username) {
+        this._browserStorageService.set(MANULOG_USERNAME, username);
+        this._browserStorageService.set(MANULOG_USER_TOKEN, token);
+        this._user$$.next(user);
+      } else {
+        this._user$$.next(null);
+      }
     });
   }
 

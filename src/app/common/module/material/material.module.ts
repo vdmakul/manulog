@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatInputModule, MatButtonModule, MatSelectModule, MatToolbarModule, MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonToggleModule } from '@angular/material';
+import { MatInputModule, MatButtonModule, MatSelectModule, MatToolbarModule, MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonToggleModule, MatCheckboxModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
@@ -17,6 +17,9 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatIconModule,
     MatButtonToggleModule,
     LayoutModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatCheckboxModule
   ],
   exports: [
     MatInputModule,
@@ -29,6 +32,9 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatIconModule,
     MatButtonToggleModule,
     LayoutModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatCheckboxModule
   ]
 })
 export class MaterialModule { }

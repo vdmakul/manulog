@@ -7,14 +7,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './common/module/material/material.module';
 import { EditorComponent } from './features/editor/editor.component';
 import { MarkdownModule } from 'ngx-markdown';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AutosizeModule} from 'ngx-autosize';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './common/navbar/navbar.component';
+import { LoginComponent } from './features/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EditorComponent
+    EditorComponent,
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     MarkdownModule.forRoot(),
     AutosizeModule
   ],
