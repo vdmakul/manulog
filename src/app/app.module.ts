@@ -12,6 +12,7 @@ import {AutosizeModule} from 'ngx-autosize';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { LoginComponent } from './features/login/login.component';
+import { LoggerService } from './service/logger.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { LoginComponent } from './features/login/login.component';
     MarkdownModule.forRoot(),
     AutosizeModule
   ],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

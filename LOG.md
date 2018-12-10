@@ -45,3 +45,7 @@ Didn't manage to easily create inline title edit.
 Github REST API v3 gives an opportunity to use basic auth with pre-generated personal api tokens. These tokens are used for auth.
 Personal auth tokens can be generated on page https://github.com/settings/tokens 
 Manual how to access user info https://developer.github.com/v3/#oauth2-token-sent-in-a-header
+
+## Other useful links
+
+Great article to create logger for angular: https://robferguson.org/blog/2017/09/09/a-simple-logging-service-for-angular-4/
