@@ -22,7 +22,6 @@ export class GitRepositoryService {
     const headers: HttpHeaders = new HttpHeaders()
         .append('Authorization', 'token ' + token)
         .append('Content-Type', 'application/x-www-form-urlencoded');
-    console.log('Logging with heasder ' + JSON.stringify(headers));
     return this._http.get<GithubUser>(GITHUB_API_URL + '/user', {headers: headers})
   }
 }
