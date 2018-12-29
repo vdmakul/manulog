@@ -24,6 +24,6 @@ export class LoginComponent implements OnInit {
   }
 
   public onSubmit(val): void {
-    this._loginService.login(val.githubUser, val.token);
+    this._loginService.login(val.githubUser, val.token, val.storeToken, val.localPassword);
   }
 }

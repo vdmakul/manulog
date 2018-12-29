@@ -3,9 +3,11 @@ import { BrowserStorageService } from './browser-storage.service';
 import { GitRepositoryService, GithubUser } from './git-repository.service';
 import { Observable, Subject } from 'rxjs';
 import { LoggerService } from './logger.service';
+import { EncryptionService } from './encryption.service';
 
 export const MANULOG_USERNAME = 'MANULOG_USERNAME';
 export const MANULOG_USER_TOKEN = 'MANULOG_USER_TOKEN';
+export const MANULOG_USER_TOKEN_ENCRYPTED = 'MANULOG_USER_TOKEN_ENCRYPTED';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +19,7 @@ export class LoginService {
   constructor(
     private _browserStorageService: BrowserStorageService,
     private _gitRepositoryService: GitRepositoryService,
+    private _encryptionService: EncryptionService,
     private _logger: LoggerService
   ) { }
 
@@ -25,18 +28,27 @@ export class LoginService {
     const token = this._browserStorageService.get(MANULOG_USER_TOKEN);
     if (username && token) {
       this._logger.info(`Trying to login with existing user '${username}'`);
-      this.login(username, token);
+      this.login(username, token, false);
     } else {
       this._logger.info('No existing user for login');
     }
   }
 
-  public login(username: string, token: string) {
+  public login(username: string, token: string, storeToken: boolean, localPassword?: string) {
     this._gitRepositoryService.login(token).subscribe((user: GithubUser) => {
       if (user.login === username) {
         this._logger.info(`Successfully login with user '${username}'`);
         this._browserStorageService.set(MANULOG_USERNAME, username);
-        this._browserStorageService.set(MANULOG_USER_TOKEN, token);
+        if (storeToken) {
+          if (localPassword) {
+            const encrypted = this._encryptionService.encrypt(token, localPassword)
+            this._browserStorageService.set(MANULOG_USER_TOKEN_ENCRYPTED, encrypted);
+            this._logger.info(`Encrypted password is stored locally`);
+          } else {
+            this._browserStorageService.set(MANULOG_USER_TOKEN, token);
+            this._logger.info(`Plain password is stored locally`);
+          }
+        }
         this._user$$.next(user);
       } else {
         this._logger.warn(`Fail to login for user ${username}`);

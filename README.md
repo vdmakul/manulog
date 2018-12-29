@@ -6,11 +6,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Basic UI
 - [*] Edit and preview markdown text
 * Storage and auth
+- [*] Auth with github keys that 
+- [*] Encrypted private information with user password, stored at localStorage 
+- [ ] Decrypted tokens only in runtime during login 
+
 - [ ] Store markdown in user gists on github
-- [ ] Auth with github keys that are encrypted with user password, stored at localStorage and decrypted only in runtime
 * Basic feature: log of manual
 - [ ] UI for creating logs
 - [ ] Store logs in single .md file
+
+### TODO
+* UI and exception handling for login failure
 
 ## Development server
 
