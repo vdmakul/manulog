@@ -14,6 +14,8 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 import { LoginComponent } from './features/login/login.component';
 import { LandingComponent } from './features/landing/landing.component';
 import { LoggerService } from './service/logger.service';
+import { NewLoginComponent } from './features/login/new-login/new-login.component';
+import { ExistingLoginComponent } from './features/login/existing-login/existing-login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LoggerService } from './service/logger.service';
     EditorComponent,
     NavbarComponent,
     LoginComponent,
-    LandingComponent
+    LandingComponent,
+    NewLoginComponent,
+    ExistingLoginComponent
   ],
   imports: [
     BrowserModule,

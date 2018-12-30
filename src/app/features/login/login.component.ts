@@ -9,21 +9,9 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class LoginComponent implements OnInit {
   
-  loginFromGroup: FormGroup;
-
-  constructor(fb: FormBuilder, private _loginService: LoginService) {
-    this.loginFromGroup = fb.group({
-      storeToken: false,
-      githubUser: ['', Validators.required],
-      token: ['', Validators.required],
-      localPassword: ['']
-    });
-   }
-
-  ngOnInit() {
+  constructor() {
   }
 
-  public onSubmit(val): void {
-    this._loginService.login(val.githubUser, val.token, val.storeToken, val.localPassword);
+  ngOnInit() {
   }
 }

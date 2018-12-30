@@ -1,0 +1,19 @@
+<form #loginForm="ngForm" class="login-form container" [formGroup]="loginFromGroup" (ngSubmit)="onSubmit(loginForm.value)">
+  <mat-form-field class="login-item" appearance="outline">
+    <mat-label>Github username</mat-label>
+    <input matInput placeholder="Github username" formControlName="githubUser">
+    <mat-error *ngIf="!loginFromGroup.hasError('required')">
+      Please enter an existing github user account
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="login-item" appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" placeholder="Password for local storage" formControlName="localPassword">
+    <mat-hint>
+      Password that was used to encrypt token in your local storage
+    </mat-hint>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button>
+</form>

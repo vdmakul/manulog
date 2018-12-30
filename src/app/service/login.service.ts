@@ -23,7 +23,7 @@ export class LoginService {
     private _logger: LoggerService
   ) { }
 
-  public loginExisting() {
+  public loginCurrent() {
     const username = this._browserStorageService.get(MANULOG_USERNAME);
     const token = this._browserStorageService.get(MANULOG_USER_TOKEN);
     if (username && token) {
@@ -31,6 +31,24 @@ export class LoginService {
       this.login(username, token, false);
     } else {
       this._logger.info('No existing user for login');
+    }
+  }
+
+  public loginExisting(username: string, localPassword: string) {
+    const enryptedToken = this._browserStorageService.get(MANULOG_USER_TOKEN_ENCRYPTED);
+    if (enryptedToken == null) {
+      this._logger.warn(`No encrypted token is found in localStorage for user '${username}'`);
+    } else {
+      const token = this._encryptionService.decrypt(enryptedToken, localPassword);
+      this._gitRepositoryService.login(token).subscribe((user: GithubUser) => {
+        if (user.login === username) {
+          this._logger.info(`Successfully login with user '${username}' and locally stored encrypted token`);
+          this._user$$.next(user);
+        } else {
+          this._logger.warn(`Fail to login for user ${username} and locally stored encrypted token`);
+          this._user$$.next(null);
+        }  
+      });
     }
   }
 
@@ -59,7 +77,6 @@ export class LoginService {
 
   public logout() {
     this._logger.info('Successfully logout current user');
-    this._browserStorageService.remove(MANULOG_USERNAME);
     this._browserStorageService.remove(MANULOG_USER_TOKEN);
     this._user$$.next(null);
   }

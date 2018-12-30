@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
         this._router.navigate(['/editor']);
       }
     });
-    this._loginService.loginExisting();
+    this._loginService.loginCurrent();
   }
 
 }
