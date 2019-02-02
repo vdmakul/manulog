@@ -3,24 +3,29 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
 ## Planned features
-* Basic UI
-- [x] Edit and preview markdown text
 
+### Login page
 
-* Storage and auth
-- [x] Auth with github keys that 
-- [x] Encrypted private information with user password, stored at localStorage 
-- [x] Decrypted tokens only in runtime during login 
+- [x] Auth with github keys
+- [x] Encrypted private information with user password, stored at localStorage
+- [x] Decrypted tokens only in runtime during login
 - [ ] Handle login errors
+- [ ] Align page elements
+
+### Edit manulog page
+
+- [x] Edit and preview markdown text
 - [ ] Store markdown in user gists on github
 
+### Show list of user manulogs
 
-* Basic feature: log of manual
-- [ ] UI for creating logs
-- [ ] Store logs in single .md file
+- [ ] Show list of manulogs from list of all user available gists
+- [ ] Create new empty manulog
+- [ ] Delete manulog
 
-### TODO
-* UI and exception handling for login failure
+### View manulog page (by other users)
+
+- [ ] View-only functionality to diplay another user gist and manulog
 
 ## Development server
 
