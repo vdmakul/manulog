@@ -1,15 +1,21 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './common/navbar/navbar.component';
+import { MaterialModule } from './common/module/material/material.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MaterialModule,
+        HttpClientModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        NavbarComponent
       ],
     }).compileComponents();
   }));
@@ -26,10 +32,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('manulog');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should contain app-navbar', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to manulog!');
+    expect(compiled.querySelector('app-navbar').textContent).toBeTruthy();
   });
 });
