@@ -10,7 +10,7 @@ export class EditorComponent implements OnInit {
   constructor() { }
 
   showMarkdown: boolean;
-  title: string = 'Title';
+  title = 'Title';
   article: string;
 
   options = {

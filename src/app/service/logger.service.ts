@@ -11,9 +11,11 @@ export class LoggerService {
 
   get info() {
     if (!environment.production) {
+      /* tslint:disable:no-console*/
       return console.info.bind(console);
+      /* tslint:enable:no-console*/
     } else {
-      return (): any => undefined;;
+      return (): any => undefined;
     }
   }
 
@@ -21,7 +23,7 @@ export class LoggerService {
     if (!environment.production) {
       return console.warn.bind(console);
     } else {
-      return (): any => undefined;;
+      return (): any => undefined;
     }
   }
 
@@ -29,7 +31,7 @@ export class LoggerService {
     if (!environment.production) {
       return console.error.bind(console);
     } else {
-      return (): any => undefined;;
+      return (): any => undefined;
     }
   }
 

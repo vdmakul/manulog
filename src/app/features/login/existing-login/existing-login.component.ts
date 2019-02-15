@@ -14,7 +14,7 @@ export class ExistingLoginComponent implements OnInit {
   loginFromGroup: FormGroup;
 
   constructor(fb: FormBuilder,
-     private _loginService: LoginService, 
+     private _loginService: LoginService,
      private _browserStorageService: BrowserStorageService,
      private _logger: LoggerService) {
     this.loginFromGroup = fb.group({

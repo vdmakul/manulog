@@ -47,7 +47,7 @@ export class LoginService {
         } else {
           this._logger.warn(`Fail to login for user ${username} and locally stored encrypted token`);
           this._user$$.next(null);
-        }  
+        }
       });
     }
   }
@@ -59,7 +59,7 @@ export class LoginService {
         this._browserStorageService.set(MANULOG_USERNAME, username);
         if (storeToken) {
           if (localPassword) {
-            const encrypted = this._encryptionService.encrypt(token, localPassword)
+            const encrypted = this._encryptionService.encrypt(token, localPassword);
             this._browserStorageService.set(MANULOG_USER_TOKEN_ENCRYPTED, encrypted);
             this._logger.info(`Encrypted password is stored locally`);
           } else {
