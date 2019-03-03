@@ -12,6 +12,7 @@ import { LoggerService } from 'src/app/service/logger.service';
 export class ExistingLoginComponent implements OnInit {
 
   loginFromGroup: FormGroup;
+  loginFailed: boolean;
 
   constructor(fb: FormBuilder,
      private _loginService: LoginService,
@@ -27,6 +28,8 @@ export class ExistingLoginComponent implements OnInit {
     const username = this._browserStorageService.get(MANULOG_USERNAME);
     this._logger.info(`Pre-populating form with username '${username}'`);
     this.loginFromGroup.patchValue({githubUser: username});
+
+    this._loginService.user$.subscribe(user => this.loginFailed = user == null);
   }
 
   public onSubmit(val): void {

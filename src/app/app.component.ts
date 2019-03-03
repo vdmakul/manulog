@@ -14,9 +14,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this._loginService.user$.subscribe(user => {
-      if (user == null) {
-        this._router.navigate(['/']);
-      } else {
+      if (user != null) {
         this._router.navigate(['/editor']);
       }
     });

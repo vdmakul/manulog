@@ -48,6 +48,10 @@ export class LoginService {
           this._logger.warn(`Fail to login for user ${username} and locally stored encrypted token`);
           this._user$$.next(null);
         }
+      },
+      error => {
+        this._logger.warn(`Failed to login for user ${username}: ${error}`);
+        this._user$$.next(null);
       });
     }
   }
