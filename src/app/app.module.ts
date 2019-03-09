@@ -16,6 +16,7 @@ import { LandingComponent } from './features/landing/landing.component';
 import { LoggerService } from './service/logger.service';
 import { NewLoginComponent } from './features/login/new-login/new-login.component';
 import { ExistingLoginComponent } from './features/login/existing-login/existing-login.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ExistingLoginComponent } from './features/login/existing-login/existing
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
     MarkdownModule.forRoot(),

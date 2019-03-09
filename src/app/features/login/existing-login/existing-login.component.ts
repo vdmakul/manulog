@@ -33,6 +33,7 @@ export class ExistingLoginComponent implements OnInit {
   }
 
   public onSubmit(val): void {
+    this.loginFailed = false;
     this._loginService.loginExisting(val.githubUser, val.localPassword);
   }
 

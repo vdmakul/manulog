@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './service/login.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +8,14 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'manulog';
 
-  constructor(private _loginService: LoginService, private _router: Router, private _activatedRoute: ActivatedRoute) {}
+  constructor(private _loginService: LoginService, private _router: Router) {}
 
   ngOnInit() {
     this._loginService.users$().subscribe(user => {
+      if (user == null) {
+        this._router.navigate(['/login']);
+      }
       if (user != null) {
         this._router.navigate(['/editor']);
       }

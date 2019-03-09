@@ -39,6 +39,13 @@ The quickest way to make textarea to resize was inlude another dependency
 
 Didn't manage to easily create inline title edit.
 
+### Hugging with layouts
+
+The quickest and easiest way to make layout be fine  for me now - use [flex-layout](https://github.com/angular/flex-layout)
+
+[Good project docs](https://github.com/angular/flex-layout/wiki/Declarative-API-Overview)
+
+[Good demo app](https://tburleson-layouts-demos.firebaseapp.com/#/docs) 
 
 ## Making the auth
 
@@ -59,5 +66,7 @@ Manual how to access user info https://developer.github.com/v3/#oauth2-token-sen
  Intellij IDEA can run single test,  shows logs with test fails correctly, does ont manually repeats the test again and again (only by `Alt+Shift+R`)      
 
 ## Other useful links
-on Intellij iDEA
-Great article to create logger for angular: https://robferguson.org/blog/2017/09/09/a-simple-logging-service-for-angular-4/
+* Great article to create logger for angular: https://robferguson.org/blog/2017/09/09/a-simple-logging-service-for-angular-4/
+
+### IDE hints
+* Intellij IDEA, do not remove spaces on imports: `Preferences | Editor | Code Style | TypeScript, Spaces / Within / ES6 import/export braces`

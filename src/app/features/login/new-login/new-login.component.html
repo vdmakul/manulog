@@ -7,11 +7,14 @@
     </mat-error>
   </mat-form-field>
 
-  <mat-form-field class="login-item" appearance="outline">
+  <mat-form-field class="login-item personal-access-token" appearance="outline">
     <mat-label>Personal access token</mat-label>
     <input matInput placeholder="Personal access token" formControlName="token">
     <mat-error *ngIf="!loginFromGroup.hasError('required')">
-      Please enter a valid personal access token for github gists, see
+      Please enter a valid personal access token for github gists
+    </mat-error>
+    <mat-error *ngIf="!loginFromGroup.hasError('required')">
+      See
       <a target="_blank" href="https://github.com/settings/tokens">
         Github settings
         <mat-icon>open_in_new</mat-icon>
