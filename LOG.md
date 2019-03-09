@@ -46,6 +46,18 @@ Github REST API v3 gives an opportunity to use basic auth with pre-generated per
 Personal auth tokens can be generated on page https://github.com/settings/tokens 
 Manual how to access user info https://developer.github.com/v3/#oauth2-token-sent-in-a-header
 
-## Other useful links
+## Writing tests
 
+### Karma test fails to stop while failing
+ `ng test` does not stop and shows ` Executed 30 of 19 (9 FAILED)` an keeps counting. 
+ I have tries to setup project in Intellij IDEA, which give me another bug with setup. 
+ 
+ `Error: The '@angular-devkit/build-angular/plugins/karma' karma plugin is meant to be used from within Angular CLI and will not work correctly outside of it.`
+ This is resolved by setting Karma package as `@angular\cli` - https://github.com/angular/angular-cli/issues/10703
+ 
+ 
+ Intellij IDEA can run single test,  shows logs with test fails correctly, does ont manually repeats the test again and again (only by `Alt+Shift+R`)      
+
+## Other useful links
+on Intellij iDEA
 Great article to create logger for angular: https://robferguson.org/blog/2017/09/09/a-simple-logging-service-for-angular-4/

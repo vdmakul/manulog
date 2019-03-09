@@ -29,7 +29,7 @@ export class ExistingLoginComponent implements OnInit {
     this._logger.info(`Pre-populating form with username '${username}'`);
     this.loginFromGroup.patchValue({githubUser: username});
 
-    this._loginService.user$.subscribe(user => this.loginFailed = user == null);
+    this._loginService.users$().subscribe(user => this.loginFailed = user == null);
   }
 
   public onSubmit(val): void {

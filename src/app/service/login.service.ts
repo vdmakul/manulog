@@ -14,7 +14,7 @@ export const MANULOG_USER_TOKEN_ENCRYPTED = 'MANULOG_USER_TOKEN_ENCRYPTED';
 })
 export class LoginService {
   private _user$$: Subject<GithubUser> = new Subject<GithubUser>();
-  public user$: Observable<GithubUser> = this._user$$.asObservable();
+  private user$: Observable<GithubUser> = this._user$$.asObservable();
 
   constructor(
     private _browserStorageService: BrowserStorageService,
@@ -22,6 +22,10 @@ export class LoginService {
     private _encryptionService: EncryptionService,
     private _logger: LoggerService
   ) { }
+
+  public users$(): Observable<GithubUser> {
+    return this.user$;
+  }
 
   public loginCurrent() {
     const username = this._browserStorageService.get(MANULOG_USERNAME);

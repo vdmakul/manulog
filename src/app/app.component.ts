@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './service/login.service';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'manulog';
 
-  constructor(private _loginService: LoginService, private _router: Router) {}
+  constructor(private _loginService: LoginService, private _router: Router, private _activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this._loginService.user$.subscribe(user => {
+    this._loginService.users$().subscribe(user => {
       if (user != null) {
         this._router.navigate(['/editor']);
       }
