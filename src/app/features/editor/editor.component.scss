@@ -38,3 +38,31 @@
 .plain-text-edit > * {
     width: 100%;
 }
+
+:host ::ng-deep i.add-log-item {
+  display: none;
+  cursor: pointer;
+  height: 19px;
+}
+
+:host ::ng-deep .markdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+:host ::ng-deep .markdown-row:hover {
+  background-color: aliceblue;
+}
+
+:host ::ng-deep .markdown-row:hover i.add-log-item {
+  display: inherit;
+}
+
+:host ::ng-deep i.add-log-item:hover {
+  display: inherit;
+}
+
+:host ::ng-deep .markdown-row-action {
+  min-width: 20px;
+}
