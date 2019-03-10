@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarkdownModule, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
+import { Slugger } from 'marked';
 
 @NgModule({
   declarations: [],
@@ -43,8 +44,8 @@ function markedOptionsFactory(): MarkedOptions {
   renderer.html = (aHtml: string) => {
     return wrapWithClass(defaultRenderer.html(aHtml), 'html');
   };
-  renderer.heading = (aText: string, level: number, raw: string) => {
-    return wrapWithClass(defaultRenderer.heading(aText, level, raw), 'heading');
+  renderer.heading = (aText: string, level: number, raw: string, slugger: Slugger) => {
+    return wrapWithClass(defaultRenderer.heading(aText, level, raw, slugger), 'heading');
   };
   // renderer.list = (body: string, ordered: boolean, start: number) => {
   //   return wrapWithClass(defaultRenderer.list(body, ordered, start));
